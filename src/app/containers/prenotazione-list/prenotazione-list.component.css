@@ -1,0 +1,21 @@
+table {
+    width: 70%;
+    margin:auto;
+    font-family: cursive;
+    /* background-image: url(../../images/Immagine2.png); */
+    background-size: cover;
+    background-repeat: no-repeat;
+ 
+}
+
+.title{
+    text-align: center;
+    margin:auto;
+    font-family: cursive;
+    /* background-image: url(../../images/Immagine2.png); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: fit-content;
+  
+}
+

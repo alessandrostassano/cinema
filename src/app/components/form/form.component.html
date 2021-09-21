@@ -1,0 +1,73 @@
+<mat-card>
+    <mat-card-content>
+        <form [formGroup]="form">
+            <h3>Registrazione Nuovo Utente</h3>
+            <mat-form-field style="width: auto" class="form-group ">        
+                <input
+                    type="text"
+                    class="form-control"
+                    matInput
+                    formControlName="nome"
+                    placeholder="Nome"
+                    required
+                    >
+            </mat-form-field>
+            <mat-form-field style="width: auto" class="form-group ">        
+                <input
+                    type="text"
+                    class="form-control"
+                    matInput
+                    formControlName="cognome"
+                    placeholder="Cognome"
+                    required
+                    >
+            </mat-form-field>
+            <mat-form-field style="width: auto" class="form-group ">        
+                <input
+                    type="text"
+                    class="form-control"
+                    matInput
+                    formControlName="telefono"
+                    placeholder="Telefono"
+                    required
+                    >
+            </mat-form-field>    
+            <mat-form-field style="width: auto" class="form-group ">        
+                <input
+                    type="email"
+                    class="form-control"
+                    matInput
+                    formControlName="email"
+                    placeholder="Email"
+                    required
+                    email
+                    >
+            </mat-form-field>
+            <mat-form-field style="width: auto" class="form-group ">        
+                <input
+                    type="text"
+                    class="form-control"
+                    matInput
+                    formControlName="login"
+                    placeholder="UserName"
+                    required
+                    
+                    >
+            </mat-form-field>    
+            <mat-form-field style="width: auto" class="form-group ">        
+                <input
+                    type="password"
+                    class="form-control"
+                    matInput
+                    formControlName="psw"
+                    placeholder="Password"
+                    required
+                    
+                    >
+            </mat-form-field>
+        </form>
+        <br/><br/>
+        <button type="submit" class="btn-mobile" type="submit" mat-raised-button color="primary" routerLink="" (click)="handleSubmit()" [disabled]="form.invalid">Registrati</button>
+        <a mat-raised-button color="primary" routerLink="" routerLinkActive="active">Indietro</a>
+    </mat-card-content>
+</mat-card>

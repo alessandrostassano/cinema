@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+
+html{
+    font-family: 'Open Sans Condensed', sans-serif;
+    height: max-content;
+   background-color: #0468bf;
+}

@@ -1,0 +1,91 @@
+
+
+<mat-card>
+    <mat-card-content>
+
+<h2>COMPILA QUI E PRENOTA IL TUO BIGLIETTO</h2>
+
+        <form [formGroup]="formBiglietto">
+
+            
+
+            <mat-form-field style="width: 200px" class="form-group ">
+                <mat-label>Selezionare il film</mat-label>
+                <mat-select formControlName="film" (selectionChange)="onSelection()">
+                    <mat-option *ngFor="let element of film" [value]="element.cod_film" >
+                        {{element.titolo}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        <mat-form-field style="width: 200px" class="form-group ">        
+            <input
+                type="date"
+                class="form-control"
+                matInput
+                formControlName="data"
+                placeholder="Inserisci data"
+                required
+                >
+        </mat-form-field>
+
+
+        <mat-form-field style="width: 200px" class="form-group ">
+            <mat-label>Selezionare orario spettacolo</mat-label>
+            <mat-select formControlName="ora">
+                <mat-option  value="15">15:00</mat-option>
+                <mat-option  value="17">17:00</mat-option>
+                <mat-option  value="19">19:00</mat-option>
+                <mat-option  value="21">21:00</mat-option>
+                <mat-option  value="23">23:00</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field style="width: 200px" class="form-group ">        
+            <input
+                type="number"
+                class="form-control"
+                min=1
+                matInput
+                formControlName="quantita"
+                placeholder="Numero biglietti"
+                required
+                >
+        </mat-form-field>
+
+        
+                
+        <input type="text" class="form-control" matInput formControlName="data_inizio" hidden> 
+        <input type="text" class="form-control" matInput formControlName="data_fine" hidden>
+        
+        
+
+        <mat-form-field style="width: 200px" class="form-group ">
+            <mat-label>Selezionare il tipo pagamento</mat-label>
+            <mat-select formControlName="pagamento">
+            <mat-option  value="Bancomat">Bancomat</mat-option>
+            <mat-option  value="Contanti">Contanti</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        
+
+        <div class="col-sm-12">
+            <div class="form-group actions">
+                <button class="btn-mobile" type="submit" mat-raised-button color="primary" (click)="handleSubmitPrenotazione()" [disabled]="formBiglietto.invalid">Salva</button>
+                <a mat-raised-button color="warn" routerLink="" routerLinkActive="active">Logout</a>     
+                <button class="btn-mobile" type="button" mat-raised-button color="primary"  (click)="handleSubmitBiglietti()">Visualizza</button>           
+            </div>
+        </div>
+        <br/>
+        <div>
+            <label class="error" *ngIf="formBiglietto.errors">{{ formBiglietto.errors?.dates | json }}</label>
+        </div>
+
+
+        
+
+    </form>
+</mat-card-content>
+</mat-card>
+
